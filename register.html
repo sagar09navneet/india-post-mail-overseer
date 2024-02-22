@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="register.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Registration Page</title>
+</head>
+<body>
+   <div class="main">
+        <div class="main-nav">
+            <img class="main_nav1" src="main_nav.png" alt="main_nav" >
+            <div class="logo_3">
+                <img src="indiapostlogo.png" alt="INDIAPOST">
+            </div>
+            
+            </div>
+
+
+    <div class="mainbox">
+        <div class="container">
+    <h1 > REGISTER HERE</h1>
+    <form action="/register" method="post" autocomplete="on">
+        <!--{% csrf_token  %}-->
+        <div class="box1">
+            <div class="container">
+        <div>
+            <label for="name">Enter Full Name:</label>
+            <br>
+            <input type="text" id="name" name="name"  class="input" required >
+        </div>
+        <div>
+            <label for="phone">Phone Number:</label>
+            <br>
+            <input type="number" id="phone" name="phone" class="input" required >
+        </div>
+        <div>
+            <label for="HouseNo">House no./Flat no.:</label>
+            <br>
+            <input type="text" id="HouseNo" name="HouseNo" class="input" required >
+        </div>
+        <div >
+            <label for="Street">Street/Roadno.:</label>
+            <br>
+            <input type="text" id="Street" name="Street" class="input" required >
+        </div>
+        <div>
+            <label for="city">city/town:</label>
+            <br>
+            <input type="text" id="city" name="city" class="input" required >
+        </div>
+        <div>
+            <label for="district">District:</label>
+            <br>
+            <input type="text" id="district" name="district" class="input" required >
+        </div>
+        <div>
+            <label for="Pincode">Pincode:</label>
+            <br>
+            <input type="number" id="Pincode" name="Pincode" class="input" required >
+        </div>
+        <div>
+            <label for="State">State:</label>
+            <br>
+            <input type="text" id="State" name="state" class="input" required >
+        </div>
+        <div>
+            <label for="Country">Country:</label>
+            <br>
+            <input type="text" id="Country" name="Country" class="input" required >
+        </div>
+        </div></div>
+        <br>
+        <h1>CREATE ACCOUNT:</h1>
+        <div class="box2">
+            <div class="container">
+        <div >
+            <label for="email">email address</label>
+            <br>
+            <input type="email" id="email" name="email"  class="input" required >
+        </div>
+        <div>
+            <label for="password">Password:</label>
+            <br>
+            <input type="password" id="password1" name="password" class="input" required >
+        </div>
+        <div>
+            <label for="password1">Re-enter Password</label>
+            <br>
+            <input type="password" id="password2" name="password1"  class="input" required >
+        </div>
+
+        <div >
+            <button type="submit" class="but" >Register</button>
+        </div></div>
+    </div>
+    </form></div>
+</div>
+</div>
+</body>
+</html>

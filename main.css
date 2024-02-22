@@ -1,0 +1,145 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+   
+    background-image: linear-gradient(to top, #f3fadd, #ddf3e1, #d0ebe4, #cbe0e2, #cad5db, #cad1da, #cbced7, #cccad4, #d4cad9, #decadb, #eac9d9, #f6c8d4);
+    
+}
+.nav-links{
+    display: flex;
+    margin-left: 80%;
+    margin-bottom: 0%;
+    gap :20px;
+    color: #000000;
+    margin-top: 2px;
+}
+.main{
+    
+    border-radius: 10px;
+    margin:0px 20px 20px 20px;
+    padding:10px;
+    background-image: linear-gradient(to top, #e9e9ea, #ececec, #efeeef, #f1f1f1, #f4f4f4);
+}
+.main_nav{
+    height:100px;
+    width:100%;
+    margin-top: 2px;
+}
+
+.form-section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    margin-bottom: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th {
+    width:60%;
+    padding: 10px;
+    border: 2px solid #000000;
+    word-wrap: break-word; /* Allow words to break into multiple lines */
+}
+table td{
+    
+    padding: 10px;
+    border: 2px solid #080707;
+    word-wrap: break-word; /* Allow words to break into multiple lines */
+}
+
+table th {
+  
+    text-align: left;
+}
+select {
+    width: 100%;
+    padding: 5px;
+}
+
+input[type="text"] {
+    width: 100%; /* Make all input boxes the same width */
+    padding: 8px;
+    box-sizing: border-box;
+}
+
+button {
+    border-radius: 20px;
+    padding: 10px 20px;
+    background-color: #ff5e00;
+    color: #fff;
+    border: 2px;
+    cursor: pointer;
+    font-size: 18px;
+   margin-left:45%;
+   margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #820101;
+}
+
+
+.form-container {
+   
+   
+    background-image: linear-gradient(to top, #e9e9ea, #ececec, #efeeef, #f1f1f1, #f4f4f4);
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    left:0%;
+}
+
+
+.form-section {
+    left:0%;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+    min-height: 100px;
+}
+h1{
+    margin-top: 40px;
+    font-family:monospace;
+    text-align: center;
+}
+.container {
+    display: flex;
+}
+.TABLE1 {
+    display: inline-block;
+}
+.bookno td ,.blankreceipt td{
+    padding: 39px;
+  }
+  input[type="text"], input[type="date"] {
+    width: 100%;
+  }
+  
+  input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+  }
+  tr:nth-child(even) {
+    background-color: #f2f2f2;
+  }
+  p{
+    text-wrap:wrap;
+  }
