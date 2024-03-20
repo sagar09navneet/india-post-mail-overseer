@@ -143,3 +143,23 @@ h1{
   p{
     text-wrap:wrap;
   }
+  .balance{
+    display: flex;
+  }
+  .balance input[type="number"],
+.balance input[type="date"] {
+    height: 20px; 
+    margin-top: 3%;/* Adjust the height as per your preference */
+}
+
+
+input[type="text"],
+input[type="date"],
+input[type="number"] {
+    width: 100%;
+}
+.container {
+    width: 100%; /* Adjust as needed */
+    display: block;
+}
+

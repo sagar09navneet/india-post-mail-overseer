@@ -185,6 +185,71 @@
             </table>
             <button type="button" onclick="addRow()">+</button>
         </form>
+        <form id="mailOperationsForm" method="POST">
+            <!-- Mail Operations Section -->
+            <!--<h2>B.Mail Operations</h2>
+            <h3>6.Check the articles in deposit to see:</h3>-->
+            <h3>ORDINARY:</h3>
+            <table>
+                <tr>
+                    <th>Question</th>
+                    <th>Remarks of Mail Overseer</th>
+                </tr>
+                <tr>
+                    <td>1.No. of articles in deposit</td>
+                    <td>
+                        <input type="text" name="articlesInDepositComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2.Whether articles beyond prescribed period</td>
+                    <td>
+                        <select name="articlesBeyondPeriod">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="articlesBeyondPeriodComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>3.Whether article in deposit in good condition</td>
+                    <td>
+                        <select name="articleCondition">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="articleConditionComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>4.Compare the number of articles in deposit as per DARPAN CSI app and the physical number of
+                        articles available at the BO.</td>
+                    <td>
+                        <input type="text" name="compareArticlesComments" placeholder="Comments">
+                    </td>
+                </tr>
+            </table>
+        
+            <table id="deliveryTable1">
+                <tbody>
+                    <tr id="row0">
+                        <td>
+                            5. Check randomly a few articles delivered at the BO (including eMO) using Postinfo
+                            mobile app or through the device backup to confirm that the delivery status has been
+                            updated
+                            <select name="checkDeliveryStatus">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <input type="text" name="checkDeliveryStatusComments" placeholder="Article no">
+                            <p>Date of receipt</p><input type="date" name="dateofreceipt">
+                            <p>Date of Delivery</p> <input type="date" name="dateofdelivery">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" onclick="addRow1()">+</button>
+        </form>
         
 
 
@@ -233,10 +298,8 @@
                 <tr>
                     <td>1Last acknowledged BO balance by Account Office through BO slip or DTR.</td>
                     <td>
-                        <select name="lastAcknowledgedBalance">
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
+                        <input type="number" name="balane" placeholder="BO BALANCE">
+                        <input type="date" name="date" placeholder="DATE OF BALANCE">
                         <input type="text" name="lastAcknowledgedBalanceComments" placeholder="Comments">
                     </td>
                 </tr>
@@ -244,10 +307,8 @@
                     <td>2.Details of cash, stamp, forms in stock. Verify the same and record reason <br> for variation,
                         if any?</td>
                     <td>
-                        <select name="detailsInStock">
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
-                        </select>
+                        <input type="number" name="cash value" placeholder="CASH VALUE">
+                        <input type="number" name="stamp value" placeholder="STAMP VALUE">
                         <input type="text" name="detailsInStockComments" placeholder="Comments">
                     </td>
                 </tr>
@@ -265,29 +326,27 @@
                 <tr>
                     <td>4.Verify wallet balance with physical cash balance. Reason for variation, if any</td>
                     <td>
-                        <p>Wallet Balance:</p><input type="number" name="walletBalance" placeholder="amount">
+                        <div class="balance"><p>Wallet Balance:</p><input type="number" name="walletBalance" placeholder="amount">
+                        <input type="date" name="datewalletBalance" placeholder="date">
                         <p>Physical Balance:</p><input type="number" name="physicalBalance" placeholder="amount">
+                        <input type="date" name="datephysicalBalance" placeholder="date"></div>
                     </td>
                 </tr>
-                <table id="deliveryTable">
+            </table>
+                <table id="invoices">
                     <tbody>
                         <tr id="row0">
                             <td>
-                                5. Check randomly a few articles delivered at the BO (including eMO) using Postinfo
-                                mobile app or through the device backup to confirm that the delivery status has been
-                                updated
-                                <select name="checkDeliveryStatus">
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                                <input type="text" name="checkDeliveryStatusComments" placeholder="Article no">
-                                <p>Date of receipt</p><input type="date" name="dateofreceipt">
-                                <p>Date of Delivery</p> <input type="date" name="dateofdelivery">
+                                5.Whether stamp received through CSI and duly acknowledged? Check invoices <br>received and whether inventory updated.
+                                <input type="text" name="invoicestamp" placeholder="invoice">
+                                <input type="text" name="inventory" placeholder="Comments">
+                                
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <button type="button" onclick="addRow()">+</button>
+                <button type="button" onclick="addRow2()">+</button>
+                <table>
                 <tr>
                     <td>6.Examine the Postage Due and amount realized towards unpaid articles and record results..</td>
                     <td>
@@ -297,27 +356,22 @@
                         </select>
                         <input type="text" name="postageDueComments" placeholder="Comments">
                     </td>
-                </tr>
-                <table id="deliveryTable">
+                </tr></table>
+                <table id="bo-account">
                     <tbody>
                         <tr id="row0">
                             <td>
-                                5. Check randomly a few articles delivered at the BO (including eMO) using Postinfo
-                                mobile app or through the device backup to confirm that the delivery status has been
-                                updated
-                                <select name="checkDeliveryStatus1">
-                                    <option value="Yes">Yes</option>
-                                    <option value="No">No</option>
-                                </select>
-                                <input type="text" name="checkDeliveryStatusComments1" placeholder="Article no">
-                                <p>Date of receipt</p><input type="date" name="dateofreceipt">
-                                <p>Date of Delivery</p> <input type="date" name="dateofdelivery">
+                                7.Check BO account for one day selected at random each month since DLI/DLV and check<br> whether the entries against heads (a) and (b) of the BO slips have been<br> correctly transferred to the BO Account. If any alterations made, its genuineness may be verified.
+                                
+                                <input type="date" name="dateofaccount" placeholder="date">
+                                <p>BO SLIP</p><input type="number" name="boslip">
+                                <p>BO ACCOUNT</p> <input type="number" name="boaccount">
                             </td>
                         </tr>
                     </tbody>
                 </table>
-                <button type="button" onclick="addRow()">+</button>
-            </table>
+                <button type="button" onclick="addRow3()">+</button>
+           
         </form><!-- End of Mail Operations Section -->
         <div class="form-container">
             <div class="form-section">
@@ -342,6 +396,7 @@
                         <td>1.No of MO issued since last visit</td>
                         <td><input type="number" name="numberOfMOIssued" placeholder="Enter no of MO"></td>
                     </tr>
+                   
                     <tr>
                         <td>2.No.of MOs received for payment and whether
                             paid promptly. Check promptness with atleast
@@ -353,11 +408,13 @@
                             <input type="text" name="payeeDetails4" placeholder="payee 4 details">
                             <input type="text" name="payeeDetails5" placeholder="payee 5 details">
                         </td>
-                    </tr>
-                    <tr>
-                        <td>3.(i)No. of VP/COD articles delivered (one day in each month since DLI/DLV)<br>
-                            (ii)whether VPMO issued immediately.</td>
-                        <td>
+                    </tr></table>
+                    <table id="vp/cod">
+                        <tbody>
+                    <tr id="row0">
+                        <td> 3.(i)No. of VP/COD articles delivered (one day in each month since DLI/DLV)<br>
+                            (ii)whether VPMO issued immediately.
+                        
                             <p>(i).Article No.</p><input type="number" name="articleNumber" placeholder="Article no">
                             <p>Article Issued DATE:</p><input type="date" name="articleIssuedDate"
                                 placeholder="Article Issued Date">
@@ -372,7 +429,10 @@
                                 <option value="No">No</option>
                             </select>
                         </td>
-                    </tr>
+                    </tr></tbody>
+                </table>
+                <button type="button" onclick="addRow4()">+</button>
+<table>
                     <tr>
                         <td>4.Whether demurrage fees charged and noted in VP receipt (RP- 55)</td>
                         <td>
@@ -463,262 +523,192 @@
                     <td><input type="number" name="numberOfPassbooksDeposit">
                         <input type="text" name="numberOfPassbooksDepositComments" placeholder="COMMENTS">
                     </td>
-                </tr>
-                <tr>
+                </tr></table>
+                <table id="AO">
+                    <tbody>
+                <tr id="row0">
                     <td>6.Record status of Passbooks collected for annual interest posting and sent to AO for updation
-                    </td>
-                    <td>
-                        <select name="passbookStatus">
-                            <option value="Yes">Yes</option>
-                            <option value="No">No</option>
+                   
+                   
+                      
+                        <input type="number" name="accountnumber" placeholder="accountnumber-ao">
+                        <select name="allschemes">
+                            <option value="scheme1">scheme1</option>
+                            <option value="scheme2">scheme2</option>
                         </select>
-                        <input type="text" name="passbookStatusComments" placeholder="Comments">
                     </td>
                 </tr>
+            </tbody>
             </table>
+            <button type="button" onclick="addRow5()">+</button>
+            
         </form><!-- End of Mail Operations Section -->
 
-        <p>12 (i) For SB-26</p>
+        <P>(ii)SB-26 </P>
+        <div class="table-container1">
+        <table id="sb-26"><thead>
+            <tr>
+                <th colspan="3">BOOK NO:</th>
+                <th colspan="3">FROM(receipt issued since last visit):</th>
+                <th colspan="3">TO(receipt issued since last visit):</th>
+                <th colspan="3">BLANK RECEIPT:</th>
+            </tr></thead>
+            <tr><tbody>
+                <!-- Book No -->
+                <td  colspan="3"><input type="text" name="SB28_book_no" /></td>
+
+                <!-- FROM Section -->
+                <th>Receipt No</th>
+                <th>Date</th>
+                <th>Amount</th>
+
+                <!-- TO Section -->
+                <th>Receipt No</th>
+                <th>Date</th>
+                <th>Amount</th>
+
+                <!-- BLANK RECEIPT Section -->
+                <td colspan="3"><input type="text" name="SB28_blank_receipt" /></td>
+            </tr></tbody>
+            <tr><tbody>
+                <!-- Empty cells for Book No -->
+                <td colspan="3"></td>
+
+                <!-- FROM Sub-columns -->
+                <td><input type="text" name="SB28_receipt_no_from" /></td>
+                <td><input type="date" name="SB28_date_from" /></td>
+                <td><input type="number" name="SB28_amount_from" /></td>
+
+                <!-- TO Sub-columns -->
+                <td><input type="text" name="SB28_receipt_no_to" /></td>
+                <td><input type="date" name="SB28_date_to" /></td>
+                <td><input type="number" name="SB28_amount_to" /></td>
+
+                <!-- Empty cells for Blank Receipt -->
+                <td colspan="3"></td>
+            </tr></tbody>
+        </table></div>
+        <button onclick="addTable1()">+</button>
         <div class="container">
-            <div class="TABLE1">
-                <div class="bookno">
+           
+                <table>
+                    <tr>
+                        <td>
+                            <label for="question1">(iv) Check that acquittance on original SB-26 has been obtained from the account
+                                holder and pasted on the backside of the office copy of SB-26.</label>
+                        </td>
+                        <td><input type="text" name="acquittance_comments" placeholder="Comments"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="question2">(v) Check whether the unused SB-26 receipts are intact and run in consecutive
+                                order</label>
+                        </td>
+                        <td><input type="text" name="unused_receipts_comments" placeholder="Comments"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="question3">(vi) Check whether reference number of new account is entered on the original SB-26
+                                receipts.</label>
+                        </td>
+                        <td><input type="text" name="reference_number_comments" placeholder="Comments"></td>
+                    </tr>
+                </table>
+                
+           
+        </div> 
+        <button onclick="addTable4()">+</button>
+        <P>(ii)SB-28 </P><div class="table-container2">
+        <table><thead>
+            <tr>
+                <th colspan="3">BOOK NO:</th>
+                <th colspan="3">FROM(receipt issued since last visit):</th>
+                <th colspan="3">TO(receipt issued since last visit):</th>
+                <th colspan="3">BLANK RECEIPT:</th>
+            </tr></thead>
+            <tr><tbody>
+                <!-- Book No -->
+                <td  colspan="3"><input type="text" name="SB28_book_no" /></td>
 
-                    <table>
-                        <tr>
-                            <th colspan="3">BOOK NO:</th>
-                        </tr>
+                <!-- FROM Section -->
+                <th>Receipt No</th>
+                <th>Date</th>
+                <th>Amount</th>
 
-                        <tr>
-                            <td><input type="text" name="SB26_book_no" /></td>
+                <!-- TO Section -->
+                <th>Receipt No</th>
+                <th>Date</th>
+                <th>Amount</th>
 
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="TABLE1">
-                <div class="FROM">
+                <!-- BLANK RECEIPT Section -->
+                <td colspan="3"><input type="text" name="SB28_blank_receipt" /></td>
+            </tr></tbody>
+            <tbody>
+            <tr>
+                <!-- Empty cells for Book No -->
+                <td colspan="3"></td>
 
-                    <table>
-                        <tr>
-                            <th colspan="3">FROM(receipt issued since last visit):</th>
-                        </tr>
-                        <tr>
-                            <th>Receipt No:</th>
-                            <th>Date</th>
-                            <th>Amount</th>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="SB26_receipt_no" /></td>
-                            <td><input type="date" name="SB26_date" /></td>
-                            <td><input type="number" name="SB26_amount" /></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="TABLE1">
-                <div class="TO">
-                    <table>
-                        <tr>
-                            <th colspan="3">TO(receipt issued since last visit):</th>
-                        </tr>
-                        <tr>
-                            <th>Receipt No:</th>
-                            <th>Date</th>
-                            <th>Amount</th>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="SB26_to_receipt_no" /></td>
-                            <td><input type="date" name="SB26_to_date" /></td>
-                            <td><input type="number" name="SB26_to_amount" /></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="TABLE1">
-                <div class="blankreceipt">
+                <!-- FROM Sub-columns -->
+                <td><input type="text" name="SB28_receipt_no_from" /></td>
+                <td><input type="date" name="SB28_date_from" /></td>
+                <td><input type="number" name="SB28_amount_from" /></td>
 
-                    <table>
-                        <tr>
-                            <th colspan="3">BLANK RECEIPT:</th>
-                        </tr>
+                <!-- TO Sub-columns -->
+                <td><input type="text" name="SB28_receipt_no_to" /></td>
+                <td><input type="date" name="SB28_date_to" /></td>
+                <td><input type="number" name="SB28_amount_to" /></td>
 
-                        <tr>
-                            <td><input type="text" name="SB26_blank_receipt" /></td>
+                <!-- Empty cells for Blank Receipt -->
+                <td colspan="3"></td>
+            </tr>
+        </tbody>
+        </table>
+    </div><button onclick="addTable2()">+</button>
+        <P>(ii)SB-28 </P><div class="table-container3">
+        <table>
+            <tr>
+                <th colspan="3">BOOK NO:</th>
+                <th colspan="3">FROM(receipt issued since last visit):</th>
+                <th colspan="3">TO(receipt issued since last visit):</th>
+                <th colspan="3">BLANK RECEIPT:</th>
+            </tr>
+            <tr>
+                <!-- Book No -->
+                <td  colspan="3"><input type="text" name="SB28_book_no" /></td>
 
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <P>(ii)SB-28</P>
-        <div class="container">
-            <div class="TABLE1">
-                <div class="bookno">
+                <!-- FROM Section -->
+                <th>Receipt No</th>
+                <th>Date</th>
+                <th>Amount</th>
 
-                    <table>
-                        <tr>
-                            <th colspan="3">BOOK NO:</th>
-                        </tr>
+                <!-- TO Section -->
+                <th>Receipt No</th>
+                <th>Date</th>
+                <th>Amount</th>
 
-                        <tr>
-                            <td><input type="text" name="SB28_book_no" /></td>
+                <!-- BLANK RECEIPT Section -->
+                <td colspan="3"><input type="text" name="SB28_blank_receipt" /></td>
+            </tr>
+            <tr>
+                <!-- Empty cells for Book No -->
+                <td colspan="3"></td>
 
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="TABLE1">
-                <div class="FROM">
+                <!-- FROM Sub-columns -->
+                <td><input type="text" name="SB28_receipt_no_from" /></td>
+                <td><input type="date" name="SB28_date_from" /></td>
+                <td><input type="number" name="SB28_amount_from" /></td>
 
-                    <table>
-                        <tr>
-                            <th colspan="3">FROM(receipt issued since last visit):</th>
-                        </tr>
-                        <tr>
-                            <th>Receipt No:</th>
-                            <th>Date</th>
-                            <th>Amount</th>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="SB28_receipt_no" /></td>
-                            <td><input type="date" name="SB28_date" /></td>
-                            <td><input type="number" name="SB28_amount" /></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="TABLE1">
-                <div class="TO">
-                    <table>
-                        <tr>
-                            <th colspan="3">TO(receipt issued since last visit):</th>
-                        </tr>
-                        <tr>
-                            <th>Receipt No:</th>
-                            <th>Date</th>
-                            <th>Amount</th>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="SB28_to_receipt_no" /></td>
-                            <td><input type="date" name="SB28_to_date" /></td>
-                            <td><input type="number" name="SB28_to_amount" /></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="TABLE1">
-                <div class="blankreceipt">
+                <!-- TO Sub-columns -->
+                <td><input type="text" name="SB28_receipt_no_to" /></td>
+                <td><input type="date" name="SB28_date_to" /></td>
+                <td><input type="number" name="SB28_amount_to" /></td>
 
-                    <table>
-                        <tr>
-                            <th colspan="3">BLANK RECEIPT:</th>
-                        </tr>
-
-                        <tr>
-                            <td><input type="text" name="SB28_blank_receipt" /></td>
-
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <P>(iii)MS-87 </P>
-        <div class="container">
-
-            <div class="TABLE1">
-                <div class="bookno">
-
-                    <table>
-                        <tr>
-                            <th colspan="3">BOOK NO:</th>
-                        </tr>
-
-                        <tr>
-                            <td><input type="text" name="MS87_book_no" /></td>
-
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="TABLE1">
-                <div class="FROM">
-
-                    <table>
-                        <tr>
-                            <th colspan="3">FROM(receipt issued since last visit):</th>
-                        </tr>
-                        <tr>
-                            <th>Receipt No:</th>
-                            <th>Date</th>
-                            <th>Amount</th>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="MS87_receipt_no" /></td>
-                            <td><input type="date" name="MS87_date" /></td>
-                            <td><input type="number" name="MS87_amount" /></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="TABLE1">
-                <div class="TO">
-                    <table>
-                        <tr>
-                            <th colspan="3">TO(receipt issued since last visit):</th>
-                        </tr>
-                        <tr>
-                            <th>Receipt No:</th>
-                            <th>Date</th>
-                            <th>Amount</th>
-                        </tr>
-                        <tr>
-                            <td><input type="text" name="MS87_to_receipt_no" /></td>
-                            <td><input type="date" name="MS87_to_date" /></td>
-                            <td><input type="number" name="MS87_to_amount" /></td>
-                        </tr>
-                    </table>
-                </div>
-            </div>
-            <div class="TABLE1">
-                <div class="blankreceipt">
-
-                    <table>
-                        <tr>
-                            <th colspan="3">BLANK RECEIPT:</th>
-                        </tr>
-
-                        <tr>
-                            <td><input type="text" name="MS87_blank_receipt" /></td>
-
-                        </tr>
-                    </table>
-                </div>
-            </div>
-        </div>
-
-        <div class="form-section">
-            <label for="question1">(iv) Check that acquittance on original SB-26 has been obtained from the account
-                holder <br>
-                and pasted on the backside of the office copy of SB-26.</label>
-
-            <input type="text" name="acquittance_comments" placeholder="Comments">
-        </div>
-
-        <div class="form-section">
-            <label for="question2">(v) Check whether the unused SB-26 receipts are intact and run in consecutive
-                order</label>
-
-            <input type="text" name="unused_receipts_comments" placeholder="Comments">
-        </div>
-
-        <div class="form-section">
-            <label for="question3">(vi) Check whether reference number of new account is entered on the original SB-26
-                receipts.</label>
-
-            <input type="text" name="reference_number_comments" placeholder="Comments">
-        </div>
-
+                <!-- Empty cells for Blank Receipt -->
+                <td colspan="3"></td>
+            </tr>
+        </table></div>
+    </div><button onclick="addTable3()">+</button>
+        
         <p>13. (i) Collect three passbooks for each POSB scheme (including TD) in which transactions have taken place or
             new accounts <br>
             have been opened since the last visit and verify with the BO Journal, BO Account, respective POSB Journal
@@ -731,6 +721,7 @@
                     <tr>
                         <th>SL.No.</th>
                         <th>Account No.</th>
+                        <th>Scheme-type.</th>
                         <th>Date of last transaction</th>
                         <th>Deposit</th>
                         <th>Withdrawal</th>
@@ -744,6 +735,10 @@
                     <tr>
                         <td>1.</td>
                         <td><input type="text" name="account_no_1" /></td>
+                        <td><select name="scheme-type">
+                            <option value="scheme1">scheme1</option>
+                            <option value="scheme2">scheme2</option>
+                        </select></td>
                         <td><input type="date" name="last_transaction_date_1" /></td>
                         <td><input type="text" name="deposit_1" /></td>
                         <td><input type="text" name="withdrawal_1" /></td>
@@ -755,6 +750,10 @@
                     <tr>
                         <td>2.</td>
                         <td><input type="text" name="account_no_1" /></td>
+                        <td><select name="scheme-type">
+                            <option value="scheme1">scheme1</option>
+                            <option value="scheme2">scheme2</option>
+                        </select></td>
                         <td><input type="date" name="last_transaction_date_1" /></td>
                         <td><input type="text" name="deposit_1" /></td>
                         <td><input type="text" name="withdrawal_1" /></td>
@@ -766,6 +765,10 @@
                     <tr>
                         <td>3.</td>
                         <td><input type="text" name="account_no_1" /></td>
+                        <td><select name="scheme-type">
+                            <option value="scheme1">scheme1</option>
+                            <option value="scheme2">scheme2</option>
+                        </select></td>
                         <td><input type="date" name="last_transaction_date_1" /></td>
                         <td><input type="text" name="deposit_1" /></td>
                         <td><input type="text" name="withdrawal_1" /></td>
@@ -903,6 +906,8 @@
                     <td>
                         <p>Policy Number:</p>
                         <input type="number" name="PLIRPLIPolicyNumber">
+                        <input type="number" name="DLT" placeholder="DLT">
+                        <input type="number" name="accountnumber" placeholder="accountnumber">
                         <select name="PLIRPLITransactionsType">
                             <option value="PLI">PLI</option>
                             <option value="RPLI">RPLI</option>
@@ -914,7 +919,11 @@
                         indexed in the device for the last 10 days and timely despatch of related physical documents to
                         its Account Office.
                         Delay, if any, may be recorded for remedial action.</td>
-                    <td>
+                    <td> 
+                        <p>Policy Number:</p>
+                        <input type="number" name="PLIRPLIPolicyNumber">
+                        <input type="number" name="DLT" placeholder="DLT">
+                        <input type="number" name="accountnumber" placeholder="accountnumber">
                         <p>No Of Proposals:</p>
                         <input type="number" name="PLIRPLIProposals">
                         <select name="PLIRPLIProposalType">
