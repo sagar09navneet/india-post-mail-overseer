@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Branch Post Office Administration Form</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+
+<body>
+    <div class="nav-links">
+        <a>Sign in</a>
+        <a>REGISTER</a>
+        <a><i class="fa-solid fa-user"></i> My Profile</a>
+    </div>
+    <img class="main_nav" src="{% static 'app1/main_nav.png' %}" alt="main_nav">
+    <h1>BRANCH POST OFFICE VISIT QUESTIONNAIRE</h1>
+    <div class="main">
+
+        <form id="administrationForm" method="POST" name="administrationForm">
+            <div class="form-section" name="form-section">
+                <h2>A. Administration </h2>
+                <h3>General Information about the Branch Post Office</h3>
+                <table>
+                    <tr>
+                        <th>Information</th>
+                        <th>Details:</th>
+                    </tr>
+                    <tr>
+                        <td>1. Name of the Branch Office (BO)</td>
+                        <td><input type="text" name="branchName" placeholder="Enter Branch Name"></td>
+                    </tr>
+                    <tr>
+                        <td>2. Name of the Account Office (AO)</td>
+                        <td><input type="text" name="accountOfficeName" placeholder="Enter Account Office Name"></td>
+                    </tr>
+                    <tr>
+                        <td>3. Name of the Head Office</td>
+                        <td><input type="text" name="headOfficeName" placeholder="Enter Head Office Name"></td>
+                    </tr>
+                    <tr>
+                        <td>4. Facility ID of the BO Profit/Cost centre ID of the BO</td>
+                        <td><input type="text" name="facilityID" placeholder="Enter Facility ID"></td>
+                    </tr>
+                    <tr>
+                        <td>5. Establishment of the BO</td>
+                        <td><input type="text" name="establishment" placeholder="Enter Establishment"></td>
+                    </tr>
+                    <tr>
+                        <td>6. Date of Last Inspection (DLI) and by whom</td>
+                        <td><input type="text" name="lastInspection" placeholder="Enter Last Inspection Date"></td>
+                    </tr>
+                    <tr>
+                        <td>7. Date of subsequent visits by Mail Overseer since DLI</td>
+                        <td><input type="text" name="subsequentVisits" placeholder="Enter Subsequent Visits Date"></td>
+                    </tr>
+                </table>
+            </div>
+
+        </form>
+        <div class="form-container">
+
+
+            <div class="form-section">
+                <label for="question1">2.Is there any para of previous Inspection Report pending for compliance? If so,
+                    get the same completed by the BPM in your presence and record it in the Visit Report.</label>
+
+                <td>
+                    <select name="previousInspectionPending">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                    <input type="text" name="articlesInDepositComments" placeholder="Comments">
+                </td>
+
+            </div>
+            <div class="form-section">
+                <label for="question2">3.Whether all work carried out by Android mobile device (DARPAN 2.0) on daily
+                    basis since last visit? If not, reasons thereof.</label>
+
+                <td>
+                    <select name="workCarriedOut">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                    <input type="text" name="articlesInDepositComments" placeholder="Comments">
+                </td>
+
+            </div>
+            <div class="form-section">
+                <label for="question3">4.Whether BO signage board, IPPB Signage, Notice Board, Banners, Standees, CNB,
+                    List of Service Charges, etc. is properly mounted at appropriate place.</label>
+
+                <td>
+                    <select name="boSignage">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                    <input type="text" name="articlesInDepositComments" placeholder="Comments">
+                </td>
+
+            </div>
+            <div class="form-section">
+                <label for="question4">5.Observe the Look and Feel of the BO and ensure the Swachhta norms are followed.
+                    Also, the weeding out of old records as per norms is carried out.</label>
+
+                <td>
+                    <select name="lookAndFeel">
+                        <option value="Yes">Yes</option>
+                        <option value="No">No</option>
+                    </select>
+                    <input type="text" name="articlesInDepositComments" placeholder="Comments">
+                </td>
+
+            </div>
+
+
+        </div>
+        <form id="mailOperationsForm" method="POST">
+            <!-- Mail Operations Section -->
+            <h2>B.Mail Operations</h2>
+            <h3>6.Check the articles in deposit to see:</h3>
+            <h3>ACCOUNTABLE:</h3>
+            <table>
+                <tr>
+                    <th>Question</th>
+                    <th>Remarks of Mail Overseer</th>
+                </tr>
+                <tr>
+                    <td>1.No. of articles in deposit</td>
+                    <td>
+                        <input type="text" name="articlesInDepositComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2.Whether articles beyond prescribed period</td>
+                    <td>
+                        <select name="articlesBeyondPeriod">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="articlesBeyondPeriodComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>3.Whether article in deposit in good condition</td>
+                    <td>
+                        <select name="articleCondition">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="articleConditionComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>4.Compare the number of articles in deposit as per DARPAN CSI app and the physical number of
+                        articles available at the BO.</td>
+                    <td>
+                        <input type="text" name="compareArticlesComments" placeholder="Comments">
+                    </td>
+                </tr>
+            </table>
+        
+            <table id="deliveryTable">
+                <tbody>
+                    <tr id="row0">
+                        <td>
+                            5. Check randomly a few articles delivered at the BO (including eMO) using Postinfo
+                            mobile app or through the device backup to confirm that the delivery status has been
+                            updated
+                            <select name="checkDeliveryStatus">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <input type="text" name="checkDeliveryStatusComments" placeholder="Article no">
+                            <p>Date of receipt</p><input type="date" name="dateofreceipt">
+                            <p>Date of Delivery</p> <input type="date" name="dateofdelivery">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" onclick="addRow()">+</button>
+        </form>
+        <form id="mailOperationsForm" method="POST">
+            <!-- Mail Operations Section -->
+            <!--<h2>B.Mail Operations</h2>
+            <h3>6.Check the articles in deposit to see:</h3>-->
+            <h3>ORDINARY:</h3>
+            <table>
+                <tr>
+                    <th>Question</th>
+                    <th>Remarks of Mail Overseer</th>
+                </tr>
+                <tr>
+                    <td>1.No. of articles in deposit</td>
+                    <td>
+                        <input type="text" name="articlesInDepositComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2.Whether articles beyond prescribed period</td>
+                    <td>
+                        <select name="articlesBeyondPeriod">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="articlesBeyondPeriodComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>3.Whether article in deposit in good condition</td>
+                    <td>
+                        <select name="articleCondition">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="articleConditionComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>4.Compare the number of articles in deposit as per DARPAN CSI app and the physical number of
+                        articles available at the BO.</td>
+                    <td>
+                        <input type="text" name="compareArticlesComments" placeholder="Comments">
+                    </td>
+                </tr>
+            </table>
+        
+            <table id="deliveryTable1">
+                <tbody>
+                    <tr id="row0">
+                        <td>
+                            5. Check randomly a few articles delivered at the BO (including eMO) using Postinfo
+                            mobile app or through the device backup to confirm that the delivery status has been
+                            updated
+                            <select name="checkDeliveryStatus">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <input type="text" name="checkDeliveryStatusComments" placeholder="Article no">
+                            <p>Date of receipt</p><input type="date" name="dateofreceipt">
+                            <p>Date of Delivery</p> <input type="date" name="dateofdelivery">
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <button type="button" onclick="addRow1()">+</button>
+        </form>
+        
+
+
+            <!-- Mail Operations Section -->
+            <h2>7.LetterBoxes</h2>
+            <table>
+                <tr>
+                    <th>Question</th>
+                    <th>Remarks of Mail Overseer</th>
+                </tr>
+                <tr>
+                    <td>1.Apart from the office letter box, how many letter boxes are attached to the BO?</td>
+                    <td>
+                        <input type="number" name="noOfLetterBoxes" placeholder="Counts">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2.Whether LBs painted and in good condition?</td>
+                    <td>
+                        <select name="lbCondition">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="lbConditionComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>3.Are LBs cleared punctually? Are timings of clearance suitable?</td>
+                    <td>
+                        <select name="lbClearance">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="lbClearanceComments" placeholder="Comments">
+                    </td>
+                </tr>
+            </table>
+            <!-- Mail Operations Section -->
+            <h2>C.FINANCE AND ACCOUNTING:</h2>
+            <h3>8.BO Balance</h3>
+            <table>
+                <tr>
+                    <th>Question</th>
+                    <th>Remarks of Mail Overseer</th>
+                </tr>
+                <tr>
+                    <td>1Last acknowledged BO balance by Account Office through BO slip or DTR.</td>
+                    <td>
+                        <input type="number" name="balane" placeholder="BO BALANCE">
+                        <input type="date" name="date" placeholder="DATE OF BALANCE">
+                        <input type="text" name="lastAcknowledgedBalanceComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2.Details of cash, stamp, forms in stock. Verify the same and record reason <br> for variation,
+                        if any?</td>
+                    <td>
+                        <input type="number" name="cash value" placeholder="CASH VALUE">
+                        <input type="number" name="stamp value" placeholder="STAMP VALUE">
+                        <input type="text" name="detailsInStockComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>3.Whether cash balance is correct? verify the subsequent transactions of the BO to <br> check.
+                        If any variation record reasons</td>
+                    <td>
+                        <select name="cashBalanceCorrect">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="cashBalanceComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>4.Verify wallet balance with physical cash balance. Reason for variation, if any</td>
+                    <td>
+                        <div class="balance"><p>Wallet Balance:</p><input type="number" name="walletBalance" placeholder="amount">
+                        <input type="date" name="datewalletBalance" placeholder="date">
+                        <p>Physical Balance:</p><input type="number" name="physicalBalance" placeholder="amount">
+                        <input type="date" name="datephysicalBalance" placeholder="date"></div>
+                    </td>
+                </tr>
+            </table>
+                <table id="invoices">
+                    <tbody>
+                        <tr id="row0">
+                            <td>
+                                5.Whether stamp received through CSI and duly acknowledged? Check invoices <br>received and whether inventory updated.
+                                <input type="text" name="invoicestamp" placeholder="invoice">
+                                <input type="text" name="inventory" placeholder="Comments">
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" onclick="addRow2()">+</button>
+                <table>
+                <tr>
+                    <td>6.Examine the Postage Due and amount realized towards unpaid articles and record results..</td>
+                    <td>
+                        <select name="postageDue">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="postageDueComments" placeholder="Comments">
+                    </td>
+                </tr></table>
+                <table id="bo-account">
+                    <tbody>
+                        <tr id="row0">
+                            <td>
+                                7.Check BO account for one day selected at random each month since DLI/DLV and check<br> whether the entries against heads (a) and (b) of the BO slips have been<br> correctly transferred to the BO Account. If any alterations made, its genuineness may be verified.
+                                
+                                <input type="date" name="dateofaccount" placeholder="date">
+                                <p>BO SLIP</p><input type="number" name="boslip">
+                                <p>BO ACCOUNT</p> <input type="number" name="boaccount">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <button type="button" onclick="addRow3()">+</button>
+           
+        </form><!-- End of Mail Operations Section -->
+        <div class="form-container">
+            <div class="form-section">
+                <label for="question1">9. ExaminetheBOAccountsincethelastvisittoseethattheBPMhasnotunnecessarily
+                    retained excess cash. Examine whether the arrangements for exchange of
+                    cash with the Account Office are satisfactory and record instances of delay in payment of Money
+                    Orders, Savings Bank withdrawals etc. for want of funds. Whether the norms for remittances
+                    have been followed as mentioned in the Directorate letter No.24- 3/2012/PO dated 01/10/2018. Educate
+                    the BPM on the procedure to be followed if the amount exceeds the prescribed limit. </label>
+                <textarea id="question9" name="question9" rows="4"></textarea>
+            </div>
+        </div>
+        <form id="mailOperationsForm" method="POST">
+            <div class="form-section">
+                <h2>10.MONEY ORDER </h2>
+                <table>
+                    <tr>
+                        <th>Question</th>
+                        <th>Remarks of Mail Overseer</th>
+                    </tr>
+                    <tr>
+                        <td>1.No of MO issued since last visit</td>
+                        <td><input type="number" name="numberOfMOIssued" placeholder="Enter no of MO"></td>
+                    </tr>
+                   
+                    <tr>
+                        <td>2.No.of MOs received for payment and whether
+                            paid promptly. Check promptness with atleast
+                            5 payees. (Mention MO and payee details)</td>
+                        <td><input type="number" name="numberOfMOReceived" placeholder="no. of mo received">
+                            <input type="text" name="payeeDetails1" placeholder="payee 1 details">
+                            <input type="text" name="payeeDetails2" placeholder="payee 2 details">
+                            <input type="text" name="payeeDetails3" placeholder="payee 3 details">
+                            <input type="text" name="payeeDetails4" placeholder="payee 4 details">
+                            <input type="text" name="payeeDetails5" placeholder="payee 5 details">
+                        </td>
+                    </tr></table>
+                    <table id="vp/cod">
+                        <tbody>
+                    <tr id="row0">
+                        <td> 3.(i)No. of VP/COD articles delivered (one day in each month since DLI/DLV)<br>
+                            (ii)whether VPMO issued immediately.
+                        
+                            <p>(i).Article No.</p><input type="number" name="articleNumber" placeholder="Article no">
+                            <p>Article Issued DATE:</p><input type="date" name="articleIssuedDate"
+                                placeholder="Article Issued Date">
+                            <p>Article received DATE</p><input type="date" name="articleReceivedDate"
+                                placeholder="Article received date">
+                            <p>Article Delivered DATE:</p><input type="date" name="articleDeliveredDate"
+                                placeholder="Article Delivered Date">
+                            <p>VPMO isssued DATE:</p><input type="date" name="VPMOIssuedDate"
+                                placeholder="VPMO isssued Date">
+                            <p>(ii).</p> <select name="VPMOIssuedComments">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                        </td>
+                    </tr></tbody>
+                </table>
+                <button type="button" onclick="addRow4()">+</button>
+<table>
+                    <tr>
+                        <td>4.Whether demurrage fees charged and noted in VP receipt (RP- 55)</td>
+                        <td>
+                            <input type="text" name="demurrageFeesComments" placeholder="Comments">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5.Whether List of MO received for payment is pasted in BO journal and those issued to ABPM
+                            (MD) is pasted in Postman Book. Check the same for other accountable articles.</td>
+                        <td>
+                            <select name="listOfMOReceived">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <input type="text" name="listOfMOReceivedComments" placeholder="Comments">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6.Test check whether the BPM has given the cash to ABPM (MD) for eMO payment beyond the
+                            prescribed limit as mentioned in Directorate letter No.24-3/2012-PO dated 01.10. 2018.
+                            Educate the BPM on the procedure to be followed if the amount exceeds the prescribed limit.
+                        </td>
+                        <td>
+                            <select name="eMOPaymentLimit">
+                                <option value="Yes">Yes</option>
+                                <option value="No">No</option>
+                            </select>
+                            <input type="text" name="eMOPaymentLimitComments" placeholder="Comments">
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <!-- Mail Operations Section -->
+            <h2>11.SAVINGS BANK</h2>
+
+            <table>
+                <tr>
+                    <th>Question</th>
+                    <th>Remarks of Mail Overseer</th>
+                </tr>
+                <tr>
+                    <td>1.Whether BO journals and Specimen Signature Book of all POSB Schemes maintained and updated
+                        with complete KYC. If not, reasons to be noted and SDH to be intimated.</td>
+                    <td>
+                        <select name="BOJournals">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="BOJournalsComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2.Compare the entries made in SB/RD/TD/SSA journals with the corresponding entries made in BO
+                        account book. Intimate SDH on variation</td>
+                    <td>
+                        <select name="entriesComparison">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="entriesComparisonComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>3.Whether cheques received in BO entered in cheque register and submitted to account office?
+                    </td>
+                    <td>
+                        <select name="chequesReceived">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="chequesReceivedComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>4.Check that register for collection of passbooks of SB/PPF/SSA is maintained in Branch Post
+                        Office, as prescribed in Rule 79 of the POSB (CBS) Manual. If not, record reasons</td>
+                    <td>
+                        <select name="passbookCollectionRegister">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="passbookCollectionRegisterComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>5.No. of passbooks in deposit? Contact depositor to ascertain reason.</td>
+                    <td><input type="number" name="numberOfPassbooksDeposit">
+                        <input type="text" name="numberOfPassbooksDepositComments" placeholder="COMMENTS">
+                    </td>
+                </tr></table>
+                <table id="AO">
+                    <tbody>
+                <tr id="row0">
+                    <td>6.Record status of Passbooks collected for annual interest posting and sent to AO for updation
+                   
+                   
+                      
+                        <input type="number" name="accountnumber" placeholder="accountnumber-ao">
+                        <select name="allschemes">
+                            <option value="scheme1">scheme1</option>
+                            <option value="scheme2">scheme2</option>
+                        </select>
+                    </td>
+                </tr>
+            </tbody>
+            </table>
+            <button type="button" onclick="addRow5()">+</button>
+            
+        </form><!-- End of Mail Operations Section -->
+
+        <P>(i)SB-26 </P>
+        <div class="table-container1">
+        <table id="sb-26"><thead>
+            <tr>
+                <th colspan="3">BOOK NO:</th>
+                <th colspan="3">FROM(receipt issued since last visit):</th>
+                <th colspan="3">TO(receipt issued since last visit):</th>
+                <th colspan="3">BLANK RECEIPT:</th>
+            </tr></thead>
+            <tr><tbody>
+                <!-- Book No -->
+                <td  colspan="3"><input type="text" name="SB28_book_no" /></td>
+
+                <!-- FROM Section -->
+                <th>Receipt No</th>
+                <th>Date</th>
+                <th>Amount</th>
+
+                <!-- TO Section -->
+                <th>Receipt No</th>
+                <th>Date</th>
+                <th>Amount</th>
+
+                <!-- BLANK RECEIPT Section -->
+                <td colspan="3"><input type="text" name="SB28_blank_receipt" /></td>
+            </tr></tbody>
+            <tr><tbody>
+                <!-- Empty cells for Book No -->
+                <td colspan="3"></td>
+
+                <!-- FROM Sub-columns -->
+                <td><input type="text" name="SB28_receipt_no_from" /></td>
+                <td><input type="date" name="SB28_date_from" /></td>
+                <td><input type="number" name="SB28_amount_from" /></td>
+
+                <!-- TO Sub-columns -->
+                <td><input type="text" name="SB28_receipt_no_to" /></td>
+                <td><input type="date" name="SB28_date_to" /></td>
+                <td><input type="number" name="SB28_amount_to" /></td>
+
+                <!-- Empty cells for Blank Receipt -->
+                <td colspan="3"></td>
+            </tr></tbody>
+        </table></div>
+        <button onclick="addTable1()">+</button>
+        <div class="container">
+           
+                <table>
+                    <tr>
+                        <td>
+                            <label for="question1">(iv) Check that acquittance on original SB-26 has been obtained from the account
+                                holder and pasted on the backside of the office copy of SB-26.</label>
+                        </td>
+                        <td><input type="text" name="acquittance_comments" placeholder="Comments"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="question2">(v) Check whether the unused SB-26 receipts are intact and run in consecutive
+                                order</label>
+                        </td>
+                        <td><input type="text" name="unused_receipts_comments" placeholder="Comments"></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="question3">(vi) Check whether reference number of new account is entered on the original SB-26
+                                receipts.</label>
+                        </td>
+                        <td><input type="text" name="reference_number_comments" placeholder="Comments"></td>
+                    </tr>
+                </table>
+                
+           
+        </div> 
+        <button onclick="addTable4()">+</button>
+        <P>(ii)SB-28 </P><div class="table-container2">
+        <table><thead>
+            <tr>
+                <th colspan="3">BOOK NO:</th>
+                <th colspan="3">FROM(receipt issued since last visit):</th>
+                <th colspan="3">TO(receipt issued since last visit):</th>
+                <th colspan="3">BLANK RECEIPT:</th>
+            </tr></thead>
+            <tr><tbody>
+                <!-- Book No -->
+                <td  colspan="3"><input type="text" name="SB28_book_no" /></td>
+
+                <!-- FROM Section -->
+                <th>Receipt No</th>
+                <th>Date</th>
+                <th>Amount</th>
+
+                <!-- TO Section -->
+                <th>Receipt No</th>
+                <th>Date</th>
+                <th>Amount</th>
+
+                <!-- BLANK RECEIPT Section -->
+                <td colspan="3"><input type="text" name="SB28_blank_receipt" /></td>
+            </tr></tbody>
+            <tbody>
+            <tr>
+                <!-- Empty cells for Book No -->
+                <td colspan="3"></td>
+
+                <!-- FROM Sub-columns -->
+                <td><input type="text" name="SB28_receipt_no_from" /></td>
+                <td><input type="date" name="SB28_date_from" /></td>
+                <td><input type="number" name="SB28_amount_from" /></td>
+
+                <!-- TO Sub-columns -->
+                <td><input type="text" name="SB28_receipt_no_to" /></td>
+                <td><input type="date" name="SB28_date_to" /></td>
+                <td><input type="number" name="SB28_amount_to" /></td>
+
+                <!-- Empty cells for Blank Receipt -->
+                <td colspan="3"></td>
+            </tr>
+        </tbody>
+        </table>
+    </div><button onclick="addTable2()">+</button>
+        <P>(iii)MS-87 </P><div class="table-container3">
+        <table>
+            <tr>
+                <th colspan="3">BOOK NO:</th>
+                <th colspan="3">FROM(receipt issued since last visit):</th>
+                <th colspan="3">TO(receipt issued since last visit):</th>
+                <th colspan="3">BLANK RECEIPT:</th>
+            </tr>
+            <tr>
+                <!-- Book No -->
+                <td  colspan="3"><input type="text" name="SB28_book_no" /></td>
+
+                <!-- FROM Section -->
+                <th>Receipt No</th>
+                <th>Date</th>
+                <th>Amount</th>
+
+                <!-- TO Section -->
+                <th>Receipt No</th>
+                <th>Date</th>
+                <th>Amount</th>
+
+                <!-- BLANK RECEIPT Section -->
+                <td colspan="3"><input type="text" name="SB28_blank_receipt" /></td>
+            </tr>
+            <tr>
+                <!-- Empty cells for Book No -->
+                <td colspan="3"></td>
+
+                <!-- FROM Sub-columns -->
+                <td><input type="text" name="SB28_receipt_no_from" /></td>
+                <td><input type="date" name="SB28_date_from" /></td>
+                <td><input type="number" name="SB28_amount_from" /></td>
+
+                <!-- TO Sub-columns -->
+                <td><input type="text" name="SB28_receipt_no_to" /></td>
+                <td><input type="date" name="SB28_date_to" /></td>
+                <td><input type="number" name="SB28_amount_to" /></td>
+
+                <!-- Empty cells for Blank Receipt -->
+                <td colspan="3"></td>
+            </tr>
+        </table></div>
+    </div><button onclick="addTable3()">+</button>
+        
+        <p>13. (i) Collect three passbooks for each POSB scheme (including TD) in which transactions have taken place or
+            new accounts <br>
+            have been opened since the last visit and verify with the BO Journal, BO Account, respective POSB Journal
+            and RICT or other device data/Finacle/Account<br>
+            office and record the result in the following format:</p>
+
+        <div id="table-container">
+            <table id="myTable">
+                <thead>
+                    <tr>
+                        <th>SL.No.</th>
+                        <th>Account No.</th>
+                        <th>Scheme-type.</th>
+                        <th>Date of last transaction</th>
+                        <th>Deposit</th>
+                        <th>Withdrawal</th>
+                        <th>Balance</th>
+                        <th>SMS alert (Y/N). If N obtain KYC</th>
+                        <th>System generated receipt provided (Y/N)</th>
+                        <th>1st page entry of new passbook obtain KYC and initial deposit printed (Y/N)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1.</td>
+                        <td><input type="text" name="account_no_1" /></td>
+                        <td><select name="scheme-type">
+                            <option value="scheme1">scheme1</option>
+                            <option value="scheme2">scheme2</option>
+                        </select></td>
+                        <td><input type="date" name="last_transaction_date_1" /></td>
+                        <td><input type="text" name="deposit_1" /></td>
+                        <td><input type="text" name="withdrawal_1" /></td>
+                        <td><input type="text" name="balance_1" /></td>
+                        <td><input type="text" name="sms_alert_1" /></td>
+                        <td><input type="checkbox" name="system_receipt_1" /></td>
+                        <td><input type="checkbox" name="new_passbook_entry_1" /></td>
+                    </tr>
+                    <tr>
+                        <td>2.</td>
+                        <td><input type="text" name="account_no_1" /></td>
+                        <td><select name="scheme-type">
+                            <option value="scheme1">scheme1</option>
+                            <option value="scheme2">scheme2</option>
+                        </select></td>
+                        <td><input type="date" name="last_transaction_date_1" /></td>
+                        <td><input type="text" name="deposit_1" /></td>
+                        <td><input type="text" name="withdrawal_1" /></td>
+                        <td><input type="text" name="balance_1" /></td>
+                        <td><input type="text" name="sms_alert_1" /></td>
+                        <td><input type="checkbox" name="system_receipt_1" /></td>
+                        <td><input type="checkbox" name="new_passbook_entry_1" /></td>
+                    </tr>
+                    <tr>
+                        <td>3.</td>
+                        <td><input type="text" name="account_no_1" /></td>
+                        <td><select name="scheme-type">
+                            <option value="scheme1">scheme1</option>
+                            <option value="scheme2">scheme2</option>
+                        </select></td>
+                        <td><input type="date" name="last_transaction_date_1" /></td>
+                        <td><input type="text" name="deposit_1" /></td>
+                        <td><input type="text" name="withdrawal_1" /></td>
+                        <td><input type="text" name="balance_1" /></td>
+                        <td><input type="text" name="sms_alert_1" /></td>
+                        <td><input type="checkbox" name="system_receipt_1" /></td>
+                        <td><input type="checkbox" name="new_passbook_entry_1" /></td>
+                    </tr>
+                    <!-- Add more rows as needed -->
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <!-- Footer content -->
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+
+        <button onclick="addTable()">+</button>
+
+        <label for="question_13b">(ii) In case of any discrepancy, record reasons and bring it to the notice of SDI
+            (P)/ASP concerned.</label>
+        <input type="text" name="discrepancy_comments" placeholder="Comments">
+
+        <label for="question_13c">(iii) If the same passbook verified as that in the last visit, the reason may be
+            recorded.</label>
+        <select name="passbook_verified">
+            <option value="Yes">Yes</option>
+            <option value="No">No</option>
+        </select>
+        <input type="text" name="passbook_verified_comments" placeholder="Comments">
+
+        <div class="form-container">
+            <div class="form-section">
+                <label for="question14">14. Check two RD accounts which became discontinued since the last visit with
+                    the account holders and in case
+                    of any discrepancy noticed, record results and intimate SDI (P)/ASP concerned.</label>
+                <textarea id="question14" name="rd_discontinued_comments" rows="4"></textarea>
+            </div>
+            <div class="form-section">
+                <label for="question15">15. Check 5 SSA accounts in which no deposit made since last one year or more
+                    with reference to last balance report of
+                    FINACLE and verify with the account
+                    holder. Report discrepancy, if any, and intimate SDH.</label>
+                <input type="text" name="ssa_account_1" placeholder="Account details">
+                <input type="text" name="ssa_account_2" placeholder="Account details">
+                <input type="text" name="ssa_account_3" placeholder="Account details">
+                <input type="text" name="ssa_account_4" placeholder="Account details">
+                <input type="text" name="ssa_account_5" placeholder="Account details">
+            </div>
+        </div>
+
+
+        <form id="mailOperationsForm" method="POST">
+            <!-- Mail Operations Section -->
+            <h3>16.Report any other discrepancy/suspicious activity noticed.</h3>
+            <h2> D. INDIA POST PAYMENT BANK (IPPB)</h2>
+
+            <table>
+                <tr>
+                    <th>Query</th>
+                    <th>Remarks </th>
+                </tr>
+                <tr>
+                    <td>1.Check whether Authorization Forms are available and appropriately displayed.</td>
+                    <td>
+                        <select name="authorizationFormsAvailable">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="authorizationFormsComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>2.Check adequate inventory levels of
+                        collaterals (e.g. QR Card, Brochures, etc.) are being maintained</td>
+                    <td>
+                        <select name="inventoryLevelsMaintained">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="inventoryComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>3.Number of Doorstep service request
+                        pending. Details to be mentioned.</td>
+                    <td><input type="number" name="doorstepServiceRequests">
+                        <input type="text" name="doorstepServiceComments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>4.Check whether any applications received from the customers were lying at BO without forwarding
+                        to the IPPB branch like Account closure request, PAN Update request, Deceased claim request,
+                        POSB Offline linkage/De-linkage request etc.</td>
+                    <td><input type="number" name="applicationsReceived">
+                        <input type="text" name="applicationsReceivedComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>5.Is May I Help You Desk Maintained and Complaint Box available</td>
+                    <td>
+                        <select name="helpDeskMaintained">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="helpDeskComments" placeholder="Comments">
+                    </td>
+                </tr>
+                <tr>
+                    <td>6.Whether QR issued by IPPB is displayed at counter? If not, direct the BPM to do so</td>
+                    <td>
+                        <select name="QRDisplayed">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="QRComments" placeholder="Comments">
+                    </td>
+                </tr>
+            </table>
+            <!-- End of Mail Operations Section -->
+
+            <!-- Mail Operations Section -->
+            <h2>E.POSTAL LIFE INSURANCE:</h2>
+            <h3> 17.Transactions:</h3>
+            <table>
+                <tr>
+                    <th>Query</th>
+                    <th>Remarks </th>
+                </tr>
+                <tr>
+                    <td>1.Two days’ transactions from PLI/RPLI premium collection report for each month after last visit
+                        shall be checked/ compared with entries recorded in Day
+                        Collection report / Device report/ BO Account / DTR of that BO.</td>
+                    <td>
+                        <p>Policy Number:</p>
+                        <input type="number" name="PLIRPLIPolicyNumber">
+                        <input type="number" name="DLT" placeholder="DLT">
+                        <input type="number" name="accountnumber" placeholder="accountnumber">
+                        <select name="PLIRPLITransactionsType">
+                            <option value="PLI">PLI</option>
+                            <option value="RPLI">RPLI</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2.Check the number of PLI/RPLI proposals and other Financial / Non-Financial requests
+                        indexed in the device for the last 10 days and timely despatch of related physical documents to
+                        its Account Office.
+                        Delay, if any, may be recorded for remedial action.</td>
+                    <td> 
+                        <p>Policy Number:</p>
+                        <input type="number" name="PLIRPLIPolicyNumber">
+                        <input type="number" name="DLT" placeholder="DLT">
+                        <input type="number" name="accountnumber" placeholder="accountnumber">
+                        <p>No Of Proposals:</p>
+                        <input type="number" name="PLIRPLIProposals">
+                        <select name="PLIRPLIProposalType">
+                            <option value="PLI">PLI</option>
+                            <option value="RPLI">RPLI</option>
+                        </select>
+                        <p>Dispatched to Account Office:</p>
+                        <select name="dispatchedToAccountOffice">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3.Check whether PLI/RPLI publicity material like
+                        brochures, pamphlets, banners etc are
+                        available in the BO and banners are permanently displayed.</td>
+                    <td>
+                        <select name="PLIRPLIPublicityMaterial">
+                            <option value="Yes">Yes</option>
+                            <option value="No">No</option>
+                        </select>
+                        <input type="text" name="PLIRPLIPublicityComments" placeholder="Comments">
+                    </td>
+                </tr>
+            </table>
+            <!-- End of Mail Operations Section -->
+
+            <div class="form-container">
+                <div class="form-section">
+                    <h2>Conclusion</h2>
+                    <label for="question1"> 18.Ensure interaction with Sarpanch/other important people under the BO and
+                        obtain feedback on the services of the Branch Post Office. Sensitize customers/prospective
+                        customers about various schemes,
+                        features of e-banking /mobile banking facilities of POSB and intimate them about the need to
+                        ensure that they take printed system generated receipts for their transactions, update their
+                        mobile number to get SMS alerts and to
+                        check their balance online by calling toll free no.
+                        18002666868 or through e-passbook facility </label>
+                    <textarea id="question18" name="feedbackComments" rows="4"></textarea>
+                </div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+        <script src="1.js"></script>
+</body>
+
+</html>
