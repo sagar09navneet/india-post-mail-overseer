@@ -148,7 +148,7 @@ def submit_form(request):
         postal_life_insurance_form = PostalLifeInsuranceForm()
         conclusion_form = ConclusionForm()
 
-    return render(request, 'submit_form.html', {
+    return render(request, 'main1.html', {
         'branch_office_form': branch_office_form, 'inspection_report_form': inspection_report_form,
         'work_carried_out_form': work_carried_out_form, 'signage_form': signage_form,
         'look_and_feel_form': look_and_feel_form, 'mail_operations_form': mail_operations_form,
