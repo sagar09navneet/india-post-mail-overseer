@@ -91,7 +91,7 @@ class MoneyOrder(models.Model):
     list_of_mo_received_comments = models.TextField(verbose_name='Comments on List of MO received for payment')
     eMO_payment_limit = models.BooleanField(verbose_name='Test check whether the BPM has given the cash to ABPM (MD) for eMO payment beyond the prescribed limit as mentioned in Directorate letter No.24-3/2012-PO dated 01.10. 2018. Educate the BPM on the procedure to be followed if the amount exceeds the prescribed limit.')
     eMO_payment_limit_comments = models.TextField(verbose_name='Comments on eMO payment limit')
-from django.db import models
+
 
 class SavingsBank(models.Model):
     BO_journals = models.CharField(max_length=3, choices=(('Yes', 'Yes'), ('No', 'No')), verbose_name='Whether BO journals and Specimen Signature Book of all POSB Schemes maintained and updated with complete KYC')
@@ -152,7 +152,7 @@ class UnusedReceipts(models.Model):
 
 class ReferenceNumber(models.Model):
     comments = models.TextField(verbose_name='Comments')
-from django.db import models
+
 
 class PassbookVerification(models.Model):
     sl_no = models.IntegerField(verbose_name='SL. No.')
@@ -173,10 +173,7 @@ class PassbookVerificationLog(models.Model):
 class SSAAccount(models.Model):
     account_details = models.CharField(max_length=100, verbose_name='Account Details')
 
-class SSAAccountForm(forms.ModelForm):
-    class Meta:
-        model = SSAAccount
-        fields = ['account_details']
+
 
 
 

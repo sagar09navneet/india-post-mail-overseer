@@ -22,6 +22,7 @@
     <div class="main">
 
         <form id="administrationForm" method="POST" name="administrationForm">
+            {% csrf_token %}
             <div class="form-section" name="form-section">
                 <h2>A. Administration </h2>
                 <h3>General Information about the Branch Post Office</h3>
@@ -66,6 +67,7 @@
 
 
             <div class="form-section">
+                {% csrf_token %}
                 <label for="question1">2.Is there any para of previous Inspection Report pending for compliance? If so,
                     get the same completed by the BPM in your presence and record it in the Visit Report.</label>
 
@@ -79,6 +81,7 @@
 
             </div>
             <div class="form-section">
+                {% csrf_token %}
                 <label for="question2">3.Whether all work carried out by Android mobile device (DARPAN 2.0) on daily
                     basis since last visit? If not, reasons thereof.</label>
 
@@ -92,6 +95,7 @@
 
             </div>
             <div class="form-section">
+                {% csrf_token %}
                 <label for="question3">4.Whether BO signage board, IPPB Signage, Notice Board, Banners, Standees, CNB,
                     List of Service Charges, etc. is properly mounted at appropriate place.</label>
 
@@ -105,6 +109,7 @@
 
             </div>
             <div class="form-section">
+                {% csrf_token %}
                 <label for="question4">5.Observe the Look and Feel of the BO and ensure the Swachhta norms are followed.
                     Also, the weeding out of old records as per norms is carried out.</label>
 
@@ -121,6 +126,7 @@
 
         </div>
         <form id="mailOperationsForm" method="POST">
+            {% csrf_token %}
             <!-- Mail Operations Section -->
             <h2>B.Mail Operations</h2>
             <h3>6.Check the articles in deposit to see:</h3>
@@ -186,6 +192,7 @@
             <button type="button" onclick="addRow()">+</button>
         </form>
         <form id="mailOperationsForm" method="POST">
+            {% csrf_token %}
             <!-- Mail Operations Section -->
             <!--<h2>B.Mail Operations</h2>
             <h3>6.Check the articles in deposit to see:</h3>-->
@@ -375,6 +382,7 @@
         </form><!-- End of Mail Operations Section -->
         <div class="form-container">
             <div class="form-section">
+                {% csrf_token %}
                 <label for="question1">9. ExaminetheBOAccountsincethelastvisittoseethattheBPMhasnotunnecessarily
                     retained excess cash. Examine whether the arrangements for exchange of
                     cash with the Account Office are satisfactory and record instances of delay in payment of Money
@@ -385,6 +393,7 @@
             </div>
         </div>
         <form id="mailOperationsForm" method="POST">
+            {% csrf_token %}
             <div class="form-section">
                 <h2>10.MONEY ORDER </h2>
                 <table>
@@ -823,6 +832,7 @@
 
 
         <form id="mailOperationsForm" method="POST">
+            {% csrf_token %}
             <!-- Mail Operations Section -->
             <h3>16.Report any other discrepancy/suspicious activity noticed.</h3>
             <h2> D. INDIA POST PAYMENT BANK (IPPB)</h2>
