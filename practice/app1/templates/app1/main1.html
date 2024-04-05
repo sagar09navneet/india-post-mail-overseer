@@ -1,3 +1,4 @@
+{%load static%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,7 +9,7 @@
         integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Branch Post Office Administration Form</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="{% static 'main.css'%}">
 </head>
 
 <body>
@@ -17,7 +18,7 @@
         <a>REGISTER</a>
         <a><i class="fa-solid fa-user"></i> My Profile</a>
     </div>
-    <img class="main_nav" src="{% static 'app1/main_nav.png' %}" alt="main_nav">
+    <img class="main_nav" src="{% static 'main_nav.png' %}" alt="main_nav">
     <h1>BRANCH POST OFFICE VISIT QUESTIONNAIRE</h1>
     <div class="main">
 
@@ -62,7 +63,7 @@
                 </table>
             </div>
 
-        </form>
+        
         <div class="form-container">
 
 
@@ -125,6 +126,7 @@
 
 
         </div>
+    </form>
         <form id="mailOperationsForm" method="POST">
             {% csrf_token %}
             <!-- Mail Operations Section -->
@@ -256,7 +258,7 @@
                 </tbody>
             </table>
             <button type="button" onclick="addRow1()">+</button>
-        </form>
+        
         
 
 
@@ -379,7 +381,7 @@
                 </table>
                 <button type="button" onclick="addRow3()">+</button>
            
-        </form><!-- End of Mail Operations Section -->
+        <!-- End of Mail Operations Section -->
         <div class="form-container">
             <div class="form-section">
                 {% csrf_token %}
@@ -391,7 +393,7 @@
                     the BPM on the procedure to be followed if the amount exceeds the prescribed limit. </label>
                 <textarea id="question9" name="question9" rows="4"></textarea>
             </div>
-        </div>
+        </div></form>
         <form id="mailOperationsForm" method="POST">
             {% csrf_token %}
             <div class="form-section">
@@ -551,7 +553,7 @@
             </table>
             <button type="button" onclick="addRow5()">+</button>
             
-        </form><!-- End of Mail Operations Section -->
+        <!-- End of Mail Operations Section -->
 
         <P>(i)SB-26 </P>
         <div class="table-container1">
@@ -830,7 +832,7 @@
             </div>
         </div>
 
-
+    </form>
         <form id="mailOperationsForm" method="POST">
             {% csrf_token %}
             <!-- Mail Operations Section -->
@@ -979,7 +981,7 @@
 
             <button type="submit">Submit</button>
         </form>
-        <script src="1.js"></script>
+        <script src="{% static '1.js'%}"></script>
 </body>
 
 </html>

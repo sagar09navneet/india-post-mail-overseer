@@ -47,29 +47,29 @@ def submit_form(request):
             ssa_account_form.is_valid(), india_post_payment_bank_form.is_valid(),
             postal_life_insurance_form.is_valid(), conclusion_form.is_valid()
         ]):
-            branch_office = branch_office_form.save(commit=False)
-            inspection_report = inspection_report_form.save(commit=False)
-            work_carried_out = work_carried_out_form.save(commit=False)
-            signage = signage_form.save(commit=False)
-            look_and_feel = look_and_feel_form.save(commit=False)
-            mail_operations = mail_operations_form.save(commit=False)
-            letter_boxes = letter_boxes_form.save(commit=False)
-            finance_and_accounting = finance_and_accounting_form.save(commit=False)
-            money_order = money_order_form.save(commit=False)
-            savings_bank = savings_bank_form.save(commit=False)
-            passbook_status = passbook_status_form.save(commit=False)
-            sb26 = sb26_form.save(commit=False)
-            sb28 = sb28_form.save(commit=False)
-            ms87 = ms87_form.save(commit=False)
-            acquittance = acquittance_form.save(commit=False)
-            unused_receipts = unused_receipts_form.save(commit=False)
-            reference_number = reference_number_form.save(commit=False)
-            passbook_verification = passbook_verification_form.save(commit=False)
-            passbook_verification_log = passbook_verification_log_form.save(commit=False)
-            ssa_account = ssa_account_form.save(commit=False)
-            india_post_payment_bank = india_post_payment_bank_form.save(commit=False)
-            postal_life_insurance = postal_life_insurance_form.save(commit=False)
-            conclusion = conclusion_form.save(commit=False)
+            branch_office = branch_office_form.save
+            inspection_report = inspection_report_form.save
+            work_carried_out = work_carried_out_form.save
+            signage = signage_form.save
+            look_and_feel = look_and_feel_form.save
+            mail_operations = mail_operations_form.save
+            letter_boxes = letter_boxes_form.save
+            finance_and_accounting = finance_and_accounting_form.save
+            money_order = money_order_form.save
+            savings_bank = savings_bank_form.save
+            passbook_status = passbook_status_form.save
+            sb26 = sb26_form.save
+            sb28 = sb28_form.save
+            ms87 = ms87_form.save
+            acquittance = acquittance_form.save
+            unused_receipts = unused_receipts_form.save
+            reference_number = reference_number_form.save
+            passbook_verification = passbook_verification_form.save
+            passbook_verification_log = passbook_verification_log_form.save
+            ssa_account = ssa_account_form.save
+            india_post_payment_bank = india_post_payment_bank_form.save
+            postal_life_insurance = postal_life_insurance_form.save
+            conclusion = conclusion_form.save
 
             # Save all objects in series
             branch_office.save()
