@@ -1,4 +1,7 @@
 from django.shortcuts import render, redirect
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
+
 from .forms import (
     BranchOfficeForm, InspectionReportForm, WorkCarriedOutForm, SignageForm,
     LookAndFeelForm, MailOperationsForm, LetterBoxesForm, FinanceAndAccountingForm,
@@ -161,3 +164,25 @@ def submit_form(request):
         'ssa_account_form': ssa_account_form, 'india_post_payment_bank_form': india_post_payment_bank_form,
         'postal_life_insurance_form': postal_life_insurance_form, 'conclusion_form': conclusion_form
     })
+
+
+
+
+def home(request):
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        
+        # Authenticate user
+        user = authenticate(request, username=username, password=password)
+        if user is not None:
+            login(request, user)
+            return redirect('invoice')
+        else:
+            messages.error(request,'Invalid username or password!')
+            return render(request,"index.html")
+        
+    else:
+        return render(request,"index.html")
+
