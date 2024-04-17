@@ -50,21 +50,22 @@
                     </tr>
                     <tr>
                         <td>5. Establishment of the BO</td>
-                        <td><input type="date" name="establishment" placeholder="Enter Establishment"></td>
+                        <td><input type="text"  id="date" name="establishment"  placeholder="YYYY-MM-DD"></td>
                     </tr>
                     <tr>
-                        <td>6. Date of Last Inspection (DLI) and by whom</td>
-                        <td><input type="date" name="last_inspection" placeholder="Enter Last Inspection Date"></td>
+                        <td>6. Date bof Last Inspection (DLI) and by whom</td> 
+                        <td><input type="text" id="date" name="last_inspection"  placeholder="YYYY-MM-DD"></td>
                     </tr>
                     <tr>
                         <td>7. Date of subsequent visits by Mail Overseer since DLI</td>
-                        <td><input type="date" name="subsequent_visits" placeholder="Enter Subsequent Visits Date"></td>
+                        <td><input type="text" id="subsequent_visits" name="subsequent_visits" placeholder="YYYY-MM-DD"></td>
                     </tr>
+                    
                 </table>
             </div>
-</form>
-        <form>
-        <div class="form-container">
+
+   
+       <!-- <div class="form-container">
 
 
             <div class="form-section">
@@ -73,11 +74,11 @@
                     get the same completed by the BPM in your presence and record it in the Visit Report.</label>
 
                 <td>
-                    <select name="previousInspectionPending">
+                    <select name="previous_inspection_pending ">
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select>
-                    <input type="text" name="articlesInDepositComments" placeholder="Comments">
+                    <input type="text" name="previous_inspection_comments" placeholder="Comments">
                 </td>
 
             </div>
@@ -87,11 +88,11 @@
                     basis since last visit? If not, reasons thereof.</label>
 
                 <td>
-                    <select name="workCarriedOut">
+                    <select name=" work_carried_out">
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select>
-                    <input type="text" name="articlesInDepositComments" placeholder="Comments">
+                    <input type="text" name="work_carried_out_comments" placeholder="Comments">
                 </td>
 
             </div>
@@ -101,11 +102,11 @@
                     List of Service Charges, etc. is properly mounted at appropriate place.</label>
 
                 <td>
-                    <select name="boSignage">
+                    <select name=" bo_signage ">
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select>
-                    <input type="text" name="articlesInDepositComments" placeholder="Comments">
+                    <input type="text" name="signage_comments" placeholder="Comments">
                 </td>
 
             </div>
@@ -115,21 +116,21 @@
                     Also, the weeding out of old records as per norms is carried out.</label>
 
                 <td>
-                    <select name="lookAndFeel">
+                    <select name="look_and_feel ">
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select>
-                    <input type="text" name="articlesInDepositComments" placeholder="Comments">
+                    <input type="text" name="ook_and_feel_comments" placeholder="Comments">
                 </td>
 
             </div>
 
 
-        </div>
-    </form>
-        <form id="mailOperationsForm" method="POST">
+        </div>-->
+   
+      
             {% csrf_token %}
-            <!-- Mail Operations Section -->
+           
             <h2>B.Mail Operations</h2>
             <h3>6.Check the articles in deposit to see:</h3>
             <h3>ACCOUNTABLE:</h3>
@@ -141,34 +142,34 @@
                 <tr>
                     <td>1.No. of articles in deposit</td>
                     <td>
-                        <input type="text" name="articlesInDepositComments" placeholder="Comments">
+                        <input type="text" name="articles_in_deposit_comments" placeholder="Comments">
                     </td>
                 </tr>
                 <tr>
                     <td>2.Whether articles beyond prescribed period</td>
                     <td>
-                        <select name="articlesBeyondPeriod">
+                        <select name="articles_beyond_period">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                         </select>
-                        <input type="text" name="articlesBeyondPeriodComments" placeholder="Comments">
+                        <input type="text" name="articles_beyond_period_comments" placeholder="Comments">
                     </td>
                 </tr>
                 <tr>
                     <td>3.Whether article in deposit in good condition</td>
                     <td>
-                        <select name="articleCondition">
+                        <select name="article_condition">
                             <option value="Yes">Yes</option>
                             <option value="No">No</option>
                         </select>
-                        <input type="text" name="articleConditionComments" placeholder="Comments">
+                        <input type="text" name="article_condition_comments" placeholder="Comments">
                     </td>
                 </tr>
                 <tr>
                     <td>4.Compare the number of articles in deposit as per DARPAN CSI app and the physical number of
                         articles available at the BO.</td>
                     <td>
-                        <input type="text" name="compareArticlesComments" placeholder="Comments">
+                        <input type="text" name="compare_articles_comments" placeholder="Comments">
                     </td>
                 </tr>
             </table>
@@ -180,24 +181,24 @@
                             5. Check randomly a few articles delivered at the BO (including eMO) using Postinfo
                             mobile app or through the device backup to confirm that the delivery status has been
                             updated
-                            <select name="checkDeliveryStatus">
+                            <select name="check_delivery_status">
                                 <option value="Yes">Yes</option>
                                 <option value="No">No</option>
                             </select>
-                            <input type="text" name="checkDeliveryStatusComments" placeholder="Article no">
-                            <p>Date of receipt</p><input type="date" name="dateofreceipt">
-                            <p>Date of Delivery</p> <input type="date" name="dateofdelivery">
+                            <input type="text" name="check_delivery_status_comments" placeholder="Article no">
+                            <p>Date of receipt</p><input type="text" name="date_of_receipt">
+                            <p>Date of Delivery</p> <input type="text" name="date_of_delivery">
                         </td>
                     </tr>
                 </tbody>
             </table>
-            <button type="button" onclick="addRow()">+</button>
-        </form>
-        <form id="mailOperationsForm" method="POST">
+          <!--  <button type="button" onclick="addRow()">+</button>-->
+     
+       <!--- <form id="mailOperationsForm" method="POST">
             {% csrf_token %}
-            <!-- Mail Operations Section -->
-            <!--<h2>B.Mail Operations</h2>
-            <h3>6.Check the articles in deposit to see:</h3>-->
+         
+            <h2>B.Mail Operations</h2>
+            <h3>6.Check the articles in deposit to see:</h3>
             <h3>ORDINARY:</h3>
             <table>
                 <tr>
@@ -262,7 +263,7 @@
         
 
 
-            <!-- Mail Operations Section -->
+          
             <h2>7.LetterBoxes</h2>
             <table>
                 <tr>
@@ -296,7 +297,7 @@
                     </td>
                 </tr>
             </table>
-            <!-- Mail Operations Section -->
+       
             <h2>C.FINANCE AND ACCOUNTING:</h2>
             <h3>8.BO Balance</h3>
             <table>
@@ -381,7 +382,7 @@
                 </table>
                 <button type="button" onclick="addRow3()">+</button>
            
-        <!-- End of Mail Operations Section -->
+      
         <div class="form-container">
             <div class="form-section">
                 {% csrf_token %}
@@ -477,7 +478,7 @@
                 </table>
             </div>
 
-            <!-- Mail Operations Section -->
+           
             <h2>11.SAVINGS BANK</h2>
 
             <table>
@@ -553,7 +554,7 @@
             </table>
             <button type="button" onclick="addRow5()">+</button>
             
-        <!-- End of Mail Operations Section -->
+       
 
         <P>(i)SB-26 </P>
         <div class="table-container1">
@@ -565,37 +566,37 @@
                 <th colspan="3">BLANK RECEIPT:</th>
             </tr></thead>
             <tr><tbody>
-                <!-- Book No -->
+               
                 <td  colspan="3"><input type="text" name="SB28_book_no" /></td>
 
-                <!-- FROM Section -->
+          
                 <th>Receipt No</th>
                 <th>Date</th>
                 <th>Amount</th>
 
-                <!-- TO Section -->
+          
                 <th>Receipt No</th>
                 <th>Date</th>
                 <th>Amount</th>
 
-                <!-- BLANK RECEIPT Section -->
+      
                 <td colspan="3"><input type="text" name="SB28_blank_receipt" /></td>
             </tr></tbody>
             <tr><tbody>
-                <!-- Empty cells for Book No -->
+               
                 <td colspan="3"></td>
 
-                <!-- FROM Sub-columns -->
+               
                 <td><input type="text" name="SB28_receipt_no_from" /></td>
                 <td><input type="date" name="SB28_date_from" /></td>
                 <td><input type="number" name="SB28_amount_from" /></td>
 
-                <!-- TO Sub-columns -->
+           
                 <td><input type="text" name="SB28_receipt_no_to" /></td>
                 <td><input type="date" name="SB28_date_to" /></td>
                 <td><input type="number" name="SB28_amount_to" /></td>
 
-                <!-- Empty cells for Blank Receipt -->
+              
                 <td colspan="3"></td>
             </tr></tbody>
         </table></div>
@@ -638,38 +639,38 @@
                 <th colspan="3">BLANK RECEIPT:</th>
             </tr></thead>
             <tr><tbody>
-                <!-- Book No -->
+               
                 <td  colspan="3"><input type="text" name="SB28_book_no" /></td>
 
-                <!-- FROM Section -->
+               
                 <th>Receipt No</th>
                 <th>Date</th>
                 <th>Amount</th>
 
-                <!-- TO Section -->
+               
                 <th>Receipt No</th>
                 <th>Date</th>
                 <th>Amount</th>
 
-                <!-- BLANK RECEIPT Section -->
+             
                 <td colspan="3"><input type="text" name="SB28_blank_receipt" /></td>
             </tr></tbody>
             <tbody>
             <tr>
-                <!-- Empty cells for Book No -->
+               
                 <td colspan="3"></td>
 
-                <!-- FROM Sub-columns -->
+              
                 <td><input type="text" name="SB28_receipt_no_from" /></td>
                 <td><input type="date" name="SB28_date_from" /></td>
                 <td><input type="number" name="SB28_amount_from" /></td>
 
-                <!-- TO Sub-columns -->
+        
                 <td><input type="text" name="SB28_receipt_no_to" /></td>
                 <td><input type="date" name="SB28_date_to" /></td>
                 <td><input type="number" name="SB28_amount_to" /></td>
 
-                <!-- Empty cells for Blank Receipt -->
+            
                 <td colspan="3"></td>
             </tr>
         </tbody>
@@ -684,37 +685,37 @@
                 <th colspan="3">BLANK RECEIPT:</th>
             </tr>
             <tr>
-                <!-- Book No -->
+              
                 <td  colspan="3"><input type="text" name="SB28_book_no" /></td>
 
-                <!-- FROM Section -->
+             
                 <th>Receipt No</th>
                 <th>Date</th>
                 <th>Amount</th>
 
-                <!-- TO Section -->
+            
                 <th>Receipt No</th>
                 <th>Date</th>
                 <th>Amount</th>
 
-                <!-- BLANK RECEIPT Section -->
+            
                 <td colspan="3"><input type="text" name="SB28_blank_receipt" /></td>
             </tr>
             <tr>
-                <!-- Empty cells for Book No -->
+               
                 <td colspan="3"></td>
 
-                <!-- FROM Sub-columns -->
+            
                 <td><input type="text" name="SB28_receipt_no_from" /></td>
                 <td><input type="date" name="SB28_date_from" /></td>
                 <td><input type="number" name="SB28_amount_from" /></td>
 
-                <!-- TO Sub-columns -->
+               
                 <td><input type="text" name="SB28_receipt_no_to" /></td>
                 <td><input type="date" name="SB28_date_to" /></td>
                 <td><input type="number" name="SB28_amount_to" /></td>
 
-                <!-- Empty cells for Blank Receipt -->
+          
                 <td colspan="3"></td>
             </tr>
         </table></div>
@@ -788,11 +789,11 @@
                         <td><input type="checkbox" name="system_receipt_1" /></td>
                         <td><input type="checkbox" name="new_passbook_entry_1" /></td>
                     </tr>
-                    <!-- Add more rows as needed -->
+                   
                 </tbody>
                 <tfoot>
                     <tr>
-                        <!-- Footer content -->
+                    
                     </tr>
                 </tfoot>
             </table>
@@ -835,7 +836,7 @@
     </form>
         <form id="mailOperationsForm" method="POST">
             {% csrf_token %}
-            <!-- Mail Operations Section -->
+            
             <h3>16.Report any other discrepancy/suspicious activity noticed.</h3>
             <h2> D. INDIA POST PAYMENT BANK (IPPB)</h2>
 
@@ -901,9 +902,9 @@
                     </td>
                 </tr>
             </table>
-            <!-- End of Mail Operations Section -->
+           
 
-            <!-- Mail Operations Section -->
+          
             <h2>E.POSTAL LIFE INSURANCE:</h2>
             <h3> 17.Transactions:</h3>
             <table>
@@ -962,7 +963,7 @@
                     </td>
                 </tr>
             </table>
-            <!-- End of Mail Operations Section -->
+      
 
             <div class="form-container">
                 <div class="form-section">
@@ -977,10 +978,10 @@
                         18002666868 or through e-passbook facility </label>
                     <textarea id="question18" name="feedbackComments" rows="4"></textarea>
                 </div>
-            </div>
+            </div> --->
 
             <button type="submit">Submit</button>
-        </form>
+     </form>
         <script src="{% static '1.js'%}"></script>
 </body>
 

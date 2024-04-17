@@ -113,9 +113,9 @@ LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "UTC"
 
-DATE_INPUT_FORMATS = ('%d-%m-%Y',)  # Corrected date input format
+#DATE_INPUT_FORMATS = ('%d-%m-%Y',)  # Corrected date input format
 
-USE_L10N = False  # Set to False to avoid conflicts with custom date input format
+#USE_L10N = False  # Set to False to avoid conflicts with custom date input format
 
 USE_I18N = True
 

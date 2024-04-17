@@ -16,33 +16,31 @@ class BranchOffice(models.Model):
 
 
 # class InspectionReport(models.Model):
-#     previous_inspection_pending = models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")])
-#     previous_inspection_comments = models.TextField()
+#      previous_inspection_pending = models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")])
+#      previous_inspection_comments = models.TextField()
 
 # class WorkCarriedOut(models.Model):
-#     work_carried_out = models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")])
-#     work_carried_out_comments = models.TextField()
+#      work_carried_out = models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")])
+#      work_carried_out_comments = models.TextField()
 
 # class Signage(models.Model):
 #     bo_signage = models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")])
 #     signage_comments = models.TextField()
 
 # class LookAndFeel(models.Model):
-#     look_and_feel = models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")])
-#     look_and_feel_comments = models.TextField()
+#      look_and_feel = models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")])
+#      look_and_feel_comments = models.TextField()
 
-
-# class MailOperations(models.Model):
-#     articles_in_deposit_comments = models.TextField(verbose_name='No. of articles in deposit')
-#     articles_beyond_period = models.BooleanField(verbose_name='Whether articles beyond prescribed period')
-#     articles_beyond_period_comments = models.TextField(verbose_name='Comments on articles beyond prescribed period')
-#     article_condition = models.BooleanField(verbose_name='Whether article in deposit in good condition')
-#     article_condition_comments = models.TextField(verbose_name='Comments on article condition')
-#     compare_articles_comments = models.TextField(verbose_name='Compare the number of articles in deposit comments')
-#     check_delivery_status = models.BooleanField(verbose_name='Check delivery status')
-#     check_delivery_status_comments = models.TextField(verbose_name='Comments on delivery status')
-#     date_of_receipt = models.DateField(verbose_name='Date of receipt')
-#     date_of_delivery = models.DateField(verbose_name='Date of delivery')
+     articles_in_deposit_comments = models.TextField(verbose_name='No. of articles in deposit' , default='adn')
+     articles_beyond_period = models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")], blank=True, null=True , default='adn')
+     articles_beyond_period_comments = models.TextField(verbose_name='Comments on articles beyond prescribed period' , default='adn')
+     article_condition =  models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")], blank=True, null=True , default='adn')
+     article_condition_comments = models.TextField(verbose_name='Comments on article condition' , default='adn')
+     compare_articles_comments = models.TextField(verbose_name='Compare the number of articles in deposit comments' , default='adn')
+     check_delivery_status =  models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")], blank=True, null=True , default='adn')
+     check_delivery_status_comments = models.TextField(verbose_name='Comments on delivery status', default='adn')
+     date_of_receipt = models.TextField(verbose_name='Date of receipt', default='adn')
+     date_of_delivery = models.TextField(verbose_name='Date of delivery', default='adn')
 # class LetterBoxes(models.Model):
 #     no_of_letter_boxes = models.IntegerField(verbose_name='Apart from the office letter box, how many letter boxes are attached to the BO?')
 #     lb_condition = models.BooleanField(verbose_name='Whether LBs painted and in good condition?')
