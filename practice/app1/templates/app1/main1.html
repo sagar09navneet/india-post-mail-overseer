@@ -50,31 +50,31 @@
                     </tr>
                     <tr>
                         <td>5. Establishment of the BO</td>
-                        <td><input type="text"  id="date" name="establishment"  placeholder="YYYY-MM-DD"></td>
+                        <td><input type="date"  id="date" name="establishment"></td>
                     </tr>
                     <tr>
                         <td>6. Date bof Last Inspection (DLI) and by whom</td> 
-                        <td><input type="text" id="date" name="last_inspection"  placeholder="YYYY-MM-DD"></td>
+                        <td><input type="date" id="date" name="last_inspection" ></td>
                     </tr>
                     <tr>
                         <td>7. Date of subsequent visits by Mail Overseer since DLI</td>
-                        <td><input type="text" id="subsequent_visits" name="subsequent_visits" placeholder="YYYY-MM-DD"></td>
+                        <td><input type="date" id="date" name="subsequent_visits"></td>
                     </tr>
                     
                 </table>
             </div>
 
    
-       <!-- <div class="form-container">
+        <div class="form-container">
 
 
             <div class="form-section">
-                {% csrf_token %}
+                
                 <label for="question1">2.Is there any para of previous Inspection Report pending for compliance? If so,
                     get the same completed by the BPM in your presence and record it in the Visit Report.</label>
 
                 <td>
-                    <select name="previous_inspection_pending ">
+                    <select name="previous_inspection_pending">
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select>
@@ -83,12 +83,11 @@
 
             </div>
             <div class="form-section">
-                {% csrf_token %}
                 <label for="question2">3.Whether all work carried out by Android mobile device (DARPAN 2.0) on daily
                     basis since last visit? If not, reasons thereof.</label>
 
                 <td>
-                    <select name=" work_carried_out">
+                    <select name="work_carried_out">
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select>
@@ -97,12 +96,11 @@
 
             </div>
             <div class="form-section">
-                {% csrf_token %}
                 <label for="question3">4.Whether BO signage board, IPPB Signage, Notice Board, Banners, Standees, CNB,
                     List of Service Charges, etc. is properly mounted at appropriate place.</label>
 
                 <td>
-                    <select name=" bo_signage ">
+                    <select name="bo_signage">
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select>
@@ -111,25 +109,23 @@
 
             </div>
             <div class="form-section">
-                {% csrf_token %}
                 <label for="question4">5.Observe the Look and Feel of the BO and ensure the Swachhta norms are followed.
                     Also, the weeding out of old records as per norms is carried out.</label>
 
                 <td>
-                    <select name="look_and_feel ">
+                    <select name="look_and_feel">
                         <option value="Yes">Yes</option>
                         <option value="No">No</option>
                     </select>
-                    <input type="text" name="ook_and_feel_comments" placeholder="Comments">
+                    <input type="text" name="look_and_feel_comments" placeholder="Comments">
                 </td>
 
             </div>
 
 
-        </div>-->
+        </div>
    
       
-            {% csrf_token %}
            
             <h2>B.Mail Operations</h2>
             <h3>6.Check the articles in deposit to see:</h3>
@@ -186,13 +182,13 @@
                                 <option value="No">No</option>
                             </select>
                             <input type="text" name="check_delivery_status_comments" placeholder="Article no">
-                            <p>Date of receipt</p><input type="text" name="date_of_receipt">
-                            <p>Date of Delivery</p> <input type="text" name="date_of_delivery">
+                            <p>Date of receipt</p><input type="date" name="date_of_receipt">
+                            <p>Date of Delivery</p> <input type="date" name="date_of_delivery">
                         </td>
                     </tr>
                 </tbody>
             </table>
-          <!--  <button type="button" onclick="addRow()">+</button>-->
+         <button type="button" onclick="addRow()">+</button>
      
        <!--- <form id="mailOperationsForm" method="POST">
             {% csrf_token %}
@@ -983,6 +979,25 @@
             <button type="submit">Submit</button>
      </form>
         <script src="{% static '1.js'%}"></script>
+        <script>
+            document.getElementById("myForm").addEventListener("submit", function(event) {
+                event.preventDefault(); // Prevent the default form submission
+            
+                // Get the input date value
+                var inputDate = document.getElementById("date").value;
+                // Split the input date into parts
+                var parts = inputDate.split('-');
+            
+                if (parts.length === 3) {
+                    // Reconstruct the date in yyyy-mm-dd format
+                    var convertedDate = parts[2] + "-" + parts[1] + "-" + parts[0];
+                    // Display the converted date
+                    document.getElementById("convertedDate").textContent = convertedDate;
+                } else {
+        alert("Please enter a valid date in dd-mm-yyyy format");
+    }
+});
+</script>
 </body>
 
 </html>

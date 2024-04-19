@@ -15,21 +15,17 @@ class BranchOffice(models.Model):
 
 
 
-# class InspectionReport(models.Model):
-#      previous_inspection_pending = models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")])
-#      previous_inspection_comments = models.TextField()
+     previous_inspection_pending = models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")])
+     previous_inspection_comments = models.TextField()
 
-# class WorkCarriedOut(models.Model):
-#      work_carried_out = models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")])
-#      work_carried_out_comments = models.TextField()
+     work_carried_out = models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")])
+     work_carried_out_comments = models.TextField()
 
-# class Signage(models.Model):
-#     bo_signage = models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")])
-#     signage_comments = models.TextField()
+     bo_signage = models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")])
+     signage_comments = models.TextField()
 
-# class LookAndFeel(models.Model):
-#      look_and_feel = models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")])
-#      look_and_feel_comments = models.TextField()
+     look_and_feel = models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")])
+     look_and_feel_comments = models.TextField()
 
      articles_in_deposit_comments = models.TextField(verbose_name='No. of articles in deposit' , default='adn')
      articles_beyond_period = models.CharField(max_length=3, choices=[("Yes", "Yes"), ("No", "No")], blank=True, null=True , default='adn')
