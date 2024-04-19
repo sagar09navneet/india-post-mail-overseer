@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import BranchOffice
+from django.contrib.auth import authenticate, login
+from django.contrib import messages
 
 def submit_form(request):
     if request.method == "POST":
@@ -104,3 +106,25 @@ def submit_form(request):
         return render(request, 'main1.html') 
      # Render form template if request method is GET
     return render(request, 'main1.html')
+
+
+
+def home(request):
+
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        
+        # Authenticate user
+        user = authenticate(request, username=username, password=password)
+
+        if user is not None:
+            login(request, user)
+            return redirect('success')
+        else:
+            messages.error(request,'Invalid username or password!')
+            return render(request,"index.html")
+        
+    else:
+        return render(request,"index.html")
+
